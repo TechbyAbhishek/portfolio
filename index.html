@@ -182,9 +182,10 @@
                     </h2>
                     
                     <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                        <button onclick="document.getElementById('resume-modal').classList.remove('hidden')" class="px-8 py-3.5 bg-white text-primary hover:bg-gray-100 rounded-sm font-semibold transition-all shadow-lg flex items-center justify-center gap-2">
+                        <!-- CHANGED: Replaced the <button> with an <a> tag linking to resume.pdf -->
+                        <a href="resume.pdf" target="_blank" class="px-8 py-3.5 bg-white text-primary hover:bg-gray-100 rounded-sm font-semibold transition-all shadow-lg flex items-center justify-center gap-2">
                             <i class="fas fa-file-alt text-accent"></i> Download Resume
-                        </button>
+                        </a>
                         <a href="#projects" class="px-8 py-3.5 bg-transparent border border-gray-600 text-white hover:border-white hover:bg-white/5 rounded-sm font-medium transition-all flex items-center justify-center gap-2">
                             View Projects <i class="fas fa-arrow-right text-sm"></i>
                         </a>
@@ -740,13 +741,13 @@
                             </div>
                         </a>
 
-                        <a href="https://github.com/TechbyAbhishek" target="_blank" class="flex items-center gap-5 p-5 bg-secondary rounded border border-transparent hover:border-borderLight transition-all group">
+                        <a href="https://github.com/Abhishek-1988-coder" target="_blank" class="flex items-center gap-5 p-5 bg-secondary rounded border border-transparent hover:border-borderLight transition-all group">
                             <div class="w-12 h-12 bg-white border border-gray-200 rounded-full flex items-center justify-center text-gray-800 group-hover:bg-gray-900 group-hover:text-white transition-colors shadow-sm">
                                 <i class="fab fa-github"></i>
                             </div>
                             <div>
                                 <span class="block text-xs font-bold text-textMuted uppercase">GitHub</span>
-                                <span class="font-semibold text-primary text-lg">github.com/TechbyAbhishek</span>
+                                <span class="font-semibold text-primary text-lg">github.com/Abhishek-1988-coder</span>
                             </div>
                         </a>
                     </div>
@@ -755,7 +756,7 @@
                 <!-- Contact Form -->
                 <div class="bg-secondary rounded-xl p-8 border border-borderLight shadow-sm section-fade" style="transition-delay: 200ms;">
                     <!-- INSTRUCTION: Replace "https://formspree.io/f/YOUR_FORM_ID" with your actual Formspree URL -->
-                    <form action="https://formspree.io/f/xaqwnwbd" method="POST" class="space-y-5">
+                    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-5">
                         <div class="grid grid-cols-2 gap-5">
                             <div>
                                 <label class="block text-sm font-bold text-primary mb-2">First Name</label>
@@ -872,7 +873,4 @@
         });
     </script>
 </body>
-
 </html>
-
-
