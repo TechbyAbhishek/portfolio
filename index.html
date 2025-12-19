@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhishek Sahoo | Sr. Assistant Manager (IT)</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts: Inter & Roboto Slab -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Slab:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Custom Config for Branding Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0B1120',    /* Darker, richer Navy */
+                        secondary: '#F8FAFC',  /* Very subtle cool grey */
+                        surface: '#FFFFFF',
+                        accent: '#0284C7',     /* Professional Sky Blue (Tailwind Sky-600) */
+                        accentHover: '#0369A1',
+                        accentDark: '#0C4A6E',
+                        textMain: '#1E293B',   /* Slate-800 */
+                        textMuted: '#64748B',  /* Slate-500 */
+                        borderLight: '#E2E8F0'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Roboto Slab', 'serif'],
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)',
+                        'hover': '0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles & Animations */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8FAFC;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Roboto Slab', serif;
+        }
+
+        .section-fade {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .section-fade.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Timeline Connector Line */
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 20px;
+            width: 2px;
+            background: #E2E8F0;
+            z-index: 0;
+        }
+        
+        @media (min-width: 768px) {
+            .timeline-line::before {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Custom Scrollbar for horizontal sections */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Subtle Grid Background for Hero */
+        .bg-grid-pattern {
+            background-image: linear-gradient(to right, #1e293b 1px, transparent 1px),
+                              linear-gradient(to bottom, #1e293b 1px, transparent 1px);
+            background-size: 40px 40px;
+            mask-image: linear-gradient(to bottom, transparent, black, transparent);
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 10%, rgba(0,0,0,0) 100%);
+        }
+    </style>
+</head>
+<body class="text-textMain antialiased selection:bg-accent selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-primary/90 backdrop-blur-md border-b border-white/10" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <a href="#home" class="flex items-center gap-2 group">
+                        <div class="w-10 h-10 bg-accent rounded flex items-center justify-center text-white font-serif font-bold text-xl shadow-lg group-hover:bg-white group-hover:text-accent transition-colors">
+                            AS
+                        </div>
+                        <div class="hidden sm:block text-white font-serif tracking-wide text-sm opacity-90">
+                            Abhishek Sahoo
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#about" class="text-gray-300 hover:text-white transition-colors text-sm font-medium tracking-wide">About</a>
+                    <a href="#experience" class="text-gray-300 hover:text-white transition-colors text-sm font-medium tracking-wide">Experience</a>
+                    <a href="#skills" class="text-gray-300 hover:text-white transition-colors text-sm font-medium tracking-wide">Expertise</a>
+                    <a href="#projects" class="text-gray-300 hover:text-white transition-colors text-sm font-medium tracking-wide">Projects</a>
+                    <a href="#posts" class="text-gray-300 hover:text-white transition-colors text-sm font-medium tracking-wide">Insights</a>
+                    <a href="#contact" class="px-5 py-2.5 bg-accent hover:bg-white hover:text-accent rounded text-white text-sm font-semibold transition-all shadow-lg border border-transparent hover:border-accent">
+                        Contact Me
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none p-2">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-primary border-t border-gray-800">
+            <div class="px-4 pt-4 pb-6 space-y-2">
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white">About</a>
+                <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white">Experience</a>
+                <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white">Expertise</a>
+                <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white">Projects</a>
+                <a href="#posts" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white">Insights</a>
+                <a href="#contact" class="block w-full text-center mt-4 px-4 py-3 bg-accent rounded text-white font-bold shadow-md">Contact Me</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-primary min-h-[90vh] flex items-center pt-20 overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 bg-grid-pattern opacity-20"></div>
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-accent/20 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-blue-900/20 rounded-full blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="flex flex-col-reverse md:flex-row items-center justify-between gap-12 lg:gap-20">
+                <!-- Text Content -->
+                <div class="flex-1 text-center md:text-left section-fade">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 mb-6 text-xs font-semibold tracking-widest text-accent uppercase bg-accent/10 rounded border border-accent/20">
+                        <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+                        IT Leadership & Enterprise Systems
+                    </div>
+                    
+                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white leading-tight">
+                        Reliable IT for <br class="hidden lg:block"/>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-blue-300">Critical Sectors</span>
+                    </h1>
+                    
+                    <h2 class="text-xl text-gray-400 mb-8 font-light max-w-2xl leading-relaxed">
+                        I am <span class="text-white font-medium">Abhishek Sahoo</span>, Sr. Assistant Manager (IT) at <span class="text-white border-b border-gray-600 pb-0.5">Odisha Coal and Power Limited</span>. 
+                        Turning operational challenges into stable, secure technical solutions.
+                    </h2>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <button onclick="document.getElementById('resume-modal').classList.remove('hidden')" class="px-8 py-3.5 bg-white text-primary hover:bg-gray-100 rounded-sm font-semibold transition-all shadow-lg flex items-center justify-center gap-2">
+                            <i class="fas fa-file-alt text-accent"></i> Download Resume
+                        </button>
+                        <a href="#projects" class="px-8 py-3.5 bg-transparent border border-gray-600 text-white hover:border-white hover:bg-white/5 rounded-sm font-medium transition-all flex items-center justify-center gap-2">
+                            View Projects <i class="fas fa-arrow-right text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Profile Photo -->
+                <div class="w-full max-w-sm md:w-[400px] relative section-fade" style="transition-delay: 150ms;">
+                    <!-- Decorative Frame -->
+                    <div class="absolute inset-0 border-2 border-accent/30 translate-x-4 translate-y-4 rounded-sm"></div>
+                    <div class="relative bg-gray-800 rounded-sm overflow-hidden shadow-2xl aspect-[4/5] group">
+                        <!-- Placeholder Logic -->
+                        <img src="Profile photo.jpeg" 
+                             onerror="this.src='https://ui-avatars.com/api/?name=Abhishek+Sahoo&background=0284C7&color=fff&size=512&font-size=0.33'" 
+                             alt="Abhishek Sahoo" 
+                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter grayscale group-hover:grayscale-0">
+                        
+                        <!-- Overlay gradient for text readability if needed -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-60"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-12 gap-12 items-start">
+                
+                <!-- Section Header (Left Col) -->
+                <div class="md:col-span-4 section-fade">
+                    <h2 class="text-3xl font-bold text-primary mb-6">Professional <br>Summary</h2>
+                    <div class="h-1 w-20 bg-accent mb-6"></div>
+                    <p class="text-textMuted leading-relaxed mb-6">
+                        An IT professional with a decade of experience bridging the gap between field operations and enterprise technology.
+                    </p>
+                    <!-- Highlight Cards -->
+                    <div class="space-y-4">
+                        <div class="p-4 bg-secondary border border-borderLight rounded flex items-center gap-4">
+                            <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-accent shadow-sm">
+                                <i class="fas fa-industry"></i>
+                            </div>
+                            <div>
+                                <span class="block font-bold text-primary">Energy & Mining</span>
+                                <span class="text-xs text-textMuted uppercase tracking-wider">Domain Focus</span>
+                            </div>
+                        </div>
+                        <div class="p-4 bg-secondary border border-borderLight rounded flex items-center gap-4">
+                            <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-accent shadow-sm">
+                                <i class="fas fa-tasks"></i>
+                            </div>
+                            <div>
+                                <span class="block font-bold text-primary">System Stability</span>
+                                <span class="text-xs text-textMuted uppercase tracking-wider">Core Strength</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Narrative (Right Col) -->
+                <div class="md:col-span-8 text-lg text-gray-600 leading-relaxed space-y-6 section-fade" style="transition-delay: 100ms;">
+                    <p>
+                        My career has been defined by a practical approach to technology. Having worked in both consulting environments and heavy industrial settings, I understand that the "best" system isn't just the newest one—it's the one that works reliably when it matters most.
+                    </p>
+                    <p>
+                        Currently, I lead the IT department at <strong class="text-primary font-serif">Odisha Coal and Power Limited</strong>. Here, my role goes beyond just maintaining servers; it involves designing digital workflows that replace manual paperwork, securing critical infrastructure from modern cyber threats, and implementing IoT solutions that provide real-time visibility into mining operations.
+                    </p>
+                    <p>
+                        I focus on converting day-to-day operational challenges into clear IT requirements and delivering solutions that improve security and user experience without overcomplicating the workflow.
+                    </p>
+
+                    <!-- Education Mini-Grid -->
+                    <div class="grid sm:grid-cols-2 gap-4 mt-8 pt-8 border-t border-borderLight">
+                        <div>
+                            <span class="text-xs font-bold text-accent uppercase mb-1 block">Education</span>
+                            <h4 class="font-bold text-primary">M.Tech (ECE)</h4>
+                            <p class="text-sm text-textMuted">2011 – 2013</p>
+                        </div>
+                         <div>
+                            <span class="text-xs font-bold text-accent uppercase mb-1 block">Certification</span>
+                            <h4 class="font-bold text-primary">Certified Ethical Hacker</h4>
+                            <p class="text-sm text-textMuted">Simplilearn (CEH v11)</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-24 bg-secondary border-y border-borderLight">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20 section-fade">
+                <span class="text-accent font-bold tracking-widest text-sm uppercase">Career Path</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mt-2">Professional Experience</h2>
+            </div>
+
+            <div class="relative timeline-line space-y-16">
+                
+                <!-- Role 1 -->
+                <div class="relative z-10 md:flex group section-fade">
+                    <!-- Date Column -->
+                    <div class="hidden md:block w-[160px] text-right pr-8 pt-1">
+                        <span class="text-xl font-bold text-primary block">Present</span>
+                        <span class="text-sm text-textMuted font-medium">Since 2023</span>
+                    </div>
+                    
+                    <!-- Dot -->
+                    <div class="absolute left-[20px] md:left-1/2 transform -translate-x-1/2 mt-2 w-4 h-4 rounded-full bg-white border-4 border-accent shadow-sm z-20"></div>
+
+                    <!-- Content Column -->
+                    <div class="pl-12 md:pl-12 flex-1">
+                        <div class="bg-white p-8 rounded border border-borderLight shadow-soft hover:shadow-hover transition-shadow duration-300">
+                            <div class="flex flex-col sm:flex-row justify-between sm:items-center mb-4 border-b border-gray-100 pb-4">
+                                <div>
+                                    <h3 class="text-xl font-bold text-primary">Sr. Assistant Manager (IT)</h3>
+                                    <p class="text-accent font-medium">Odisha Coal and Power Limited</p>
+                                </div>
+                                <span class="md:hidden text-sm text-textMuted mt-2 sm:mt-0 bg-gray-100 px-2 py-1 rounded inline-block w-max">Since 2023</span>
+                            </div>
+                            <ul class="space-y-3">
+                                <li class="flex items-start gap-3 text-textMuted">
+                                    <i class="fas fa-check-circle text-accent/60 mt-1 text-sm"></i>
+                                    <span>Leadership of the IT department, overseeing core operations and strategic planning.</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-textMuted">
+                                    <i class="fas fa-check-circle text-accent/60 mt-1 text-sm"></i>
+                                    <span>Coordination with multiple departments to align IT services with business goals.</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-textMuted">
+                                    <i class="fas fa-check-circle text-accent/60 mt-1 text-sm"></i>
+                                    <span>Driving infrastructure reliability and enterprise system stability.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Role 2 -->
+                <div class="relative z-10 md:flex group section-fade">
+                    <!-- Date Column -->
+                    <div class="hidden md:block w-[160px] text-right pr-8 pt-1">
+                        <span class="text-xl font-bold text-gray-400 block">2019</span>
+                        <span class="text-sm text-textMuted font-medium">to 2023</span>
+                    </div>
+                    
+                    <!-- Dot -->
+                    <div class="absolute left-[20px] md:left-1/2 transform -translate-x-1/2 mt-2 w-4 h-4 rounded-full bg-white border-4 border-gray-300 group-hover:border-accent transition-colors z-20"></div>
+
+                    <!-- Content Column -->
+                    <div class="pl-12 md:pl-12 flex-1">
+                        <div class="bg-white p-8 rounded border border-borderLight shadow-soft hover:shadow-hover transition-shadow duration-300">
+                            <div class="flex flex-col sm:flex-row justify-between sm:items-center mb-4 border-b border-gray-100 pb-4">
+                                <div>
+                                    <h3 class="text-xl font-bold text-primary">Assistant Manager (IT)</h3>
+                                    <p class="text-textMuted font-medium">Odisha Coal and Power Limited</p>
+                                </div>
+                                <span class="md:hidden text-sm text-textMuted mt-2 sm:mt-0 bg-gray-100 px-2 py-1 rounded inline-block w-max">2019 - 2023</span>
+                            </div>
+                            <ul class="space-y-3">
+                                <li class="flex items-start gap-3 text-textMuted">
+                                    <i class="fas fa-angle-right text-gray-400 mt-1"></i>
+                                    <span>Managed on-ground IT planning and system strengthening.</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-textMuted">
+                                    <i class="fas fa-angle-right text-gray-400 mt-1"></i>
+                                    <span>Implemented centralized surveillance and network security systems.</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-textMuted">
+                                    <i class="fas fa-angle-right text-gray-400 mt-1"></i>
+                                    <span>Supported rollout of web and mobile apps for operational data tracking.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Role 3 -->
+                <div class="relative z-10 md:flex group section-fade">
+                    <!-- Date Column -->
+                    <div class="hidden md:block w-[160px] text-right pr-8 pt-1">
+                        <span class="text-xl font-bold text-gray-400 block">2013</span>
+                        <span class="text-sm text-textMuted font-medium">to 2019</span>
+                    </div>
+                    
+                    <!-- Dot -->
+                    <div class="absolute left-[20px] md:left-1/2 transform -translate-x-1/2 mt-2 w-4 h-4 rounded-full bg-white border-4 border-gray-300 z-20"></div>
+
+                    <!-- Content Column -->
+                    <div class="pl-12 md:pl-12 flex-1">
+                        <div class="bg-white p-8 rounded border border-borderLight shadow-soft hover:shadow-hover transition-shadow duration-300">
+                            <div class="flex flex-col sm:flex-row justify-between sm:items-center mb-4 border-b border-gray-100 pb-4">
+                                <div>
+                                    <h3 class="text-xl font-bold text-primary">Management Executive (IT)</h3>
+                                    <p class="text-textMuted font-medium">Trayi Consulting Pvt. Ltd</p>
+                                </div>
+                                <span class="md:hidden text-sm text-textMuted mt-2 sm:mt-0 bg-gray-100 px-2 py-1 rounded inline-block w-max">2013 - 2019</span>
+                            </div>
+                            <ul class="space-y-3">
+                                <li class="flex items-start gap-3 text-textMuted">
+                                    <i class="fas fa-angle-right text-gray-400 mt-1"></i>
+                                    <span>Consulting role focused on IT requirement analysis.</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-textMuted">
+                                    <i class="fas fa-angle-right text-gray-400 mt-1"></i>
+                                    <span>Planned and ran enterprise systems for diverse clients.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-12 gap-12">
+                <!-- Header -->
+                <div class="md:col-span-4 section-fade">
+                    <span class="text-accent font-bold tracking-widest text-sm uppercase">Expertise</span>
+                    <h2 class="text-3xl font-bold text-primary mt-2 mb-6">Technical <br>Competencies</h2>
+                    <p class="text-textMuted mb-8">
+                        A balanced mix of infrastructure management, security enforcement, and application strategy.
+                    </p>
+                    <div class="bg-secondary p-6 rounded border border-borderLight">
+                         <h4 class="font-bold text-primary mb-3">Languages & Tools</h4>
+                         <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-white border border-gray-200 text-gray-700 text-sm font-medium rounded">Python (Intermediate)</span>
+                            <span class="px-3 py-1 bg-white border border-gray-200 text-gray-700 text-sm font-medium rounded">AutoCAD</span>
+                            <span class="px-3 py-1 bg-white border border-gray-200 text-gray-700 text-sm font-medium rounded">MS Office</span>
+                         </div>
+                    </div>
+                </div>
+
+                <!-- Skills Grid -->
+                <div class="md:col-span-8 grid sm:grid-cols-2 gap-6 section-fade" style="transition-delay: 100ms;">
+                    
+                    <!-- Card 1 -->
+                    <div class="bg-white p-6 border border-borderLight rounded shadow-sm hover:shadow-md transition-all group">
+                        <div class="w-12 h-12 bg-blue-50 rounded flex items-center justify-center text-accent text-xl mb-4 group-hover:bg-accent group-hover:text-white transition-colors">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-primary mb-3">Infrastructure & Ops</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-1 bg-gray-50 text-gray-600 text-xs font-semibold uppercase tracking-wide rounded">Wireless Comms</span>
+                            <span class="px-2.5 py-1 bg-gray-50 text-gray-600 text-xs font-semibold uppercase tracking-wide rounded">Asset Tracking</span>
+                            <span class="px-2.5 py-1 bg-gray-50 text-gray-600 text-xs font-semibold uppercase tracking-wide rounded">System Planning</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="bg-white p-6 border border-borderLight rounded shadow-sm hover:shadow-md transition-all group">
+                        <div class="w-12 h-12 bg-blue-50 rounded flex items-center justify-center text-accent text-xl mb-4 group-hover:bg-accent group-hover:text-white transition-colors">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-primary mb-3">Security & Compliance</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-1 bg-gray-50 text-gray-600 text-xs font-semibold uppercase tracking-wide rounded">Next-Gen Firewalls</span>
+                            <span class="px-2.5 py-1 bg-gray-50 text-gray-600 text-xs font-semibold uppercase tracking-wide rounded">XDR</span>
+                            <span class="px-2.5 py-1 bg-gray-50 text-gray-600 text-xs font-semibold uppercase tracking-wide rounded">CCTV Surveillance</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="bg-white p-6 border border-borderLight rounded shadow-sm hover:shadow-md transition-all group">
+                        <div class="w-12 h-12 bg-blue-50 rounded flex items-center justify-center text-accent text-xl mb-4 group-hover:bg-accent group-hover:text-white transition-colors">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-primary mb-3">IoT & Automation</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-1 bg-gray-50 text-gray-600 text-xs font-semibold uppercase tracking-wide rounded">GPS Fleets</span>
+                            <span class="px-2.5 py-1 bg-gray-50 text-gray-600 text-xs font-semibold uppercase tracking-wide rounded">Sensors</span>
+                            <span class="px-2.5 py-1 bg-gray-50 text-gray-600 text-xs font-semibold uppercase tracking-wide rounded">Data Monitoring</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="bg-white p-6 border border-borderLight rounded shadow-sm hover:shadow-md transition-all group">
+                        <div class="w-12 h-12 bg-blue-50 rounded flex items-center justify-center text-accent text-xl mb-4 group-hover:bg-accent group-hover:text-white transition-colors">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-primary mb-3">Digital Transformation</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-1 bg-gray-50 text-gray-600 text-xs font-semibold uppercase tracking-wide rounded">Process Automation</span>
+                            <span class="px-2.5 py-1 bg-gray-50 text-gray-600 text-xs font-semibold uppercase tracking-wide rounded">App Strategy</span>
+                            <span class="px-2.5 py-1 bg-gray-50 text-gray-600 text-xs font-semibold uppercase tracking-wide rounded">Requirements Analysis</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 bg-primary text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 section-fade">
+                <div>
+                    <span class="text-accent font-bold tracking-widest text-sm uppercase">Case Studies</span>
+                    <h2 class="text-3xl md:text-4xl font-bold mt-2">Key Initiatives</h2>
+                </div>
+                <p class="text-gray-400 max-w-md mt-4 md:mt-0 text-right md:text-left">
+                    Select projects demonstrating impact on operational efficiency, safety, and security.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 section-fade">
+                
+                <!-- Project 1 -->
+                <div class="bg-white/5 border border-white/10 p-8 rounded hover:bg-white/10 transition-colors duration-300">
+                    <h3 class="text-xl font-bold text-white mb-3">Digital File Movement System</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Spearheaded the shift from manual paper trails to a digital workflow, significantly improving approval traceability and reducing archival costs.
+                    </p>
+                    <div class="flex items-center justify-between border-t border-white/10 pt-4">
+                        <span class="text-xs font-bold text-accent uppercase">Automation</span>
+                        <i class="fas fa-arrow-right text-gray-500"></i>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-white/5 border border-white/10 p-8 rounded hover:bg-white/10 transition-colors duration-300">
+                    <h3 class="text-xl font-bold text-white mb-3">Safety Reporting Application</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Designed the functional requirements for a web and mobile app enabling field staff to report hazards instantly, reducing incident response time.
+                    </p>
+                    <div class="flex items-center justify-between border-t border-white/10 pt-4">
+                        <span class="text-xs font-bold text-green-500 uppercase">HSE / App</span>
+                        <i class="fas fa-arrow-right text-gray-500"></i>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="bg-white/5 border border-white/10 p-8 rounded hover:bg-white/10 transition-colors duration-300">
+                    <h3 class="text-xl font-bold text-white mb-3">Next-Gen Network Security</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Implemented high-availability firewalls integrated with XDR solutions to proactively detect threats and secure critical power infrastructure.
+                    </p>
+                    <div class="flex items-center justify-between border-t border-white/10 pt-4">
+                        <span class="text-xs font-bold text-blue-400 uppercase">Cybersecurity</span>
+                        <i class="fas fa-arrow-right text-gray-500"></i>
+                    </div>
+                </div>
+
+                 <!-- Project 4 -->
+                 <div class="bg-white/5 border border-white/10 p-8 rounded hover:bg-white/10 transition-colors duration-300">
+                    <h3 class="text-xl font-bold text-white mb-3">Restricted Zone Comms</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Deployed dedicated wireless communication systems in zones where standard mobile networks fail, ensuring constant contact for safety.
+                    </p>
+                    <div class="flex items-center justify-between border-t border-white/10 pt-4">
+                        <span class="text-xs font-bold text-purple-400 uppercase">Connectivity</span>
+                        <i class="fas fa-arrow-right text-gray-500"></i>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="bg-white/5 border border-white/10 p-8 rounded hover:bg-white/10 transition-colors duration-300">
+                    <h3 class="text-xl font-bold text-white mb-3">GPS Fleet Tracking</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Introduced GPS tracking for heavy mining equipment to gain real-time visibility into fleet utilization and route compliance.
+                    </p>
+                    <div class="flex items-center justify-between border-t border-white/10 pt-4">
+                        <span class="text-xs font-bold text-yellow-500 uppercase">IoT / Logistics</span>
+                        <i class="fas fa-arrow-right text-gray-500"></i>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="bg-white/5 border border-white/10 p-8 rounded hover:bg-white/10 transition-colors duration-300">
+                    <h3 class="text-xl font-bold text-white mb-3">Centralized Surveillance</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Unified scattered CCTV feeds into a centralized monitoring station with long-term storage, enhancing site security and audit capabilities.
+                    </p>
+                    <div class="flex items-center justify-between border-t border-white/10 pt-4">
+                        <span class="text-xs font-bold text-red-400 uppercase">Physical Security</span>
+                        <i class="fas fa-arrow-right text-gray-500"></i>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Media Section -->
+    <section id="posts" class="py-24 bg-secondary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 section-fade">
+                <span class="text-accent font-bold tracking-widest text-sm uppercase">Media & Content</span>
+                <h2 class="text-3xl font-bold text-primary mt-2">Industry Insights</h2>
+            </div>
+
+            <!-- Blog Grid -->
+            <div class="grid md:grid-cols-2 gap-8 mb-16 section-fade">
+                <article class="bg-white p-8 rounded border border-borderLight hover:shadow-hover transition-all">
+                    <div class="flex items-center gap-3 text-sm text-textMuted mb-3">
+                        <i class="far fa-calendar"></i> Dec 10, 2024
+                        <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
+                        <span>Mining Tech</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-3 group-hover:text-accent transition-colors">The Future of IoT in Coal Mining</h3>
+                    <p class="text-gray-600 mb-4">
+                        How sensor integration is shifting open-cast mines from reactive maintenance to predictive operations.
+                    </p>
+                    <a href="#" class="text-accent font-semibold hover:text-accentHover inline-flex items-center gap-2">
+                        Read Article <i class="fas fa-arrow-right text-sm"></i>
+                    </a>
+                </article>
+
+                <article class="bg-white p-8 rounded border border-borderLight hover:shadow-hover transition-all">
+                    <div class="flex items-center gap-3 text-sm text-textMuted mb-3">
+                        <i class="far fa-calendar"></i> Nov 22, 2024
+                        <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
+                        <span>Cybersecurity</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-3 group-hover:text-accent transition-colors">Securing the Power Grid</h3>
+                    <p class="text-gray-600 mb-4">
+                        Why traditional IT security isn't enough for OT environments. A look at XDR implementation.
+                    </p>
+                    <a href="#" class="text-accent font-semibold hover:text-accentHover inline-flex items-center gap-2">
+                        Read Article <i class="fas fa-arrow-right text-sm"></i>
+                    </a>
+                </article>
+            </div>
+
+            <!-- Short Form Content (Reels) -->
+            <div class="mb-16 section-fade">
+                <h3 class="text-xl font-bold text-primary mb-6 flex items-center gap-2">
+                    <i class="fas fa-bolt text-accent"></i> Industry Shorts
+                </h3>
+                <div class="flex gap-4 overflow-x-auto pb-6 no-scrollbar snap-x snap-mandatory">
+                    <!-- Short 1 -->
+                    <div class="snap-center min-w-[240px] h-[380px] bg-gray-900 rounded-lg relative overflow-hidden group cursor-pointer shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-500" alt="Tech Reel">
+                        <div class="absolute bottom-0 left-0 p-4 w-full bg-gradient-to-t from-black/90 to-transparent">
+                            <span class="bg-red-600 text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase mb-2 inline-block">Short</span>
+                            <p class="text-white font-bold leading-tight">Server Room Architecture Setup</p>
+                        </div>
+                        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                            <i class="fas fa-play text-white"></i>
+                        </div>
+                    </div>
+
+                     <!-- Short 2 -->
+                     <div class="snap-center min-w-[240px] h-[380px] bg-gray-900 rounded-lg relative overflow-hidden group cursor-pointer shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-500" alt="Tech Reel">
+                        <div class="absolute bottom-0 left-0 p-4 w-full bg-gradient-to-t from-black/90 to-transparent">
+                            <span class="bg-red-600 text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase mb-2 inline-block">Short</span>
+                            <p class="text-white font-bold leading-tight">IoT Field Sensors Demo</p>
+                        </div>
+                         <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                            <i class="fas fa-play text-white"></i>
+                        </div>
+                    </div>
+                     <!-- Short 3 -->
+                     <div class="snap-center min-w-[240px] h-[380px] bg-gray-900 rounded-lg relative overflow-hidden group cursor-pointer shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1531297461136-82lwDe8a9b6b?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-500" alt="Tech Reel">
+                        <div class="absolute bottom-0 left-0 p-4 w-full bg-gradient-to-t from-black/90 to-transparent">
+                            <span class="bg-red-600 text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase mb-2 inline-block">Short</span>
+                            <p class="text-white font-bold leading-tight">Digital Transformation Talk</p>
+                        </div>
+                         <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                            <i class="fas fa-play text-white"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Full Length Videos -->
+            <div class="section-fade">
+                <h3 class="text-xl font-bold text-primary mb-6 flex items-center gap-2">
+                    <i class="fas fa-video text-accent"></i> Webinars & Demos
+                </h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Video 1 -->
+                    <div class="bg-white rounded border border-borderLight overflow-hidden flex flex-col hover:shadow-md transition-shadow">
+                        <div class="relative bg-gray-200 h-56 flex items-center justify-center group cursor-pointer">
+                            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80" class="absolute inset-0 w-full h-full object-cover opacity-80" alt="Video Thumb">
+                            <div class="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors"></div>
+                            <div class="relative w-16 h-16 bg-white/90 rounded-full flex items-center justify-center pl-1 shadow-lg group-hover:scale-110 transition-transform">
+                                <i class="fas fa-play text-accent text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col">
+                            <h4 class="font-bold text-primary text-lg mb-2">Process Automation Strategy</h4>
+                            <p class="text-textMuted text-sm mb-4 flex-1">A detailed walkthrough of how we automated the approval chain.</p>
+                            <button class="w-full py-2.5 border border-borderLight text-textMain rounded text-sm font-medium hover:bg-gray-50 flex items-center justify-center gap-2 transition-colors">
+                                <i class="fas fa-download text-textMuted"></i> Download Resource
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Video 2 -->
+                    <div class="bg-white rounded border border-borderLight overflow-hidden flex flex-col hover:shadow-md transition-shadow">
+                        <div class="relative bg-gray-200 h-56 flex items-center justify-center group cursor-pointer">
+                            <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&w=600&q=80" class="absolute inset-0 w-full h-full object-cover opacity-80" alt="Video Thumb">
+                            <div class="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors"></div>
+                            <div class="relative w-16 h-16 bg-white/90 rounded-full flex items-center justify-center pl-1 shadow-lg group-hover:scale-110 transition-transform">
+                                <i class="fas fa-play text-accent text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col">
+                            <h4 class="font-bold text-primary text-lg mb-2">Safety App Implementation</h4>
+                            <p class="text-textMuted text-sm mb-4 flex-1">Technical demo of the field safety reporting application features.</p>
+                            <button class="w-full py-2.5 border border-borderLight text-textMain rounded text-sm font-medium hover:bg-gray-50 flex items-center justify-center gap-2 transition-colors">
+                                <i class="fas fa-download text-textMuted"></i> Download Resource
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-white border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                
+                <!-- Contact Info -->
+                <div class="section-fade">
+                    <span class="text-accent font-bold tracking-widest text-sm uppercase">Get in Touch</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mt-2 mb-6">Let's Connect</h2>
+                    <p class="text-textMuted text-lg mb-8 leading-relaxed">
+                        I am always open to discussing IT strategy, enterprise security, and digital transformation in the energy sector.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <a href="mailto:sahoo.abhishek2013@gmail.com" class="flex items-center gap-5 p-5 bg-secondary rounded border border-transparent hover:border-borderLight transition-all group">
+                            <div class="w-12 h-12 bg-white border border-gray-200 rounded-full flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white transition-colors shadow-sm">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <span class="block text-xs font-bold text-textMuted uppercase">Email</span>
+                                <span class="font-semibold text-primary text-lg">sahoo.abhishek2013@gmail.com</span>
+                            </div>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/abhisheksahoo1988" target="_blank" class="flex items-center gap-5 p-5 bg-secondary rounded border border-transparent hover:border-borderLight transition-all group">
+                            <div class="w-12 h-12 bg-white border border-gray-200 rounded-full flex items-center justify-center text-[#0077b5] group-hover:bg-[#0077b5] group-hover:text-white transition-colors shadow-sm">
+                                <i class="fab fa-linkedin-in"></i>
+                            </div>
+                            <div>
+                                <span class="block text-xs font-bold text-textMuted uppercase">LinkedIn</span>
+                                <span class="font-semibold text-primary text-lg">linkedin.com/in/abhisheksahoo1988</span>
+                            </div>
+                        </a>
+
+                        <a href="https://github.com/Abhishek-1988-coder" target="_blank" class="flex items-center gap-5 p-5 bg-secondary rounded border border-transparent hover:border-borderLight transition-all group">
+                            <div class="w-12 h-12 bg-white border border-gray-200 rounded-full flex items-center justify-center text-gray-800 group-hover:bg-gray-900 group-hover:text-white transition-colors shadow-sm">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <div>
+                                <span class="block text-xs font-bold text-textMuted uppercase">GitHub</span>
+                                <span class="font-semibold text-primary text-lg">github.com/Abhishek-1988-coder</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-secondary rounded-xl p-8 border border-borderLight shadow-sm section-fade" style="transition-delay: 200ms;">
+                    <form onsubmit="event.preventDefault(); alert('Message sent! (This is a demo)');" class="space-y-5">
+                        <div class="grid grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-sm font-bold text-primary mb-2">First Name</label>
+                                <input type="text" class="w-full px-4 py-3 bg-white border border-gray-200 rounded focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-shadow" placeholder="John">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-primary mb-2">Last Name</label>
+                                <input type="text" class="w-full px-4 py-3 bg-white border border-gray-200 rounded focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-shadow" placeholder="Doe">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-primary mb-2">Email Address</label>
+                            <input type="email" class="w-full px-4 py-3 bg-white border border-gray-200 rounded focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-shadow" placeholder="john@example.com">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-primary mb-2">Message</label>
+                            <textarea rows="4" class="w-full px-4 py-3 bg-white border border-gray-200 rounded focus:ring-2 focus:ring-accent focus:border-transparent outline-none transition-shadow" placeholder="How can we work together?"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-accent hover:bg-accentHover text-white font-bold py-4 rounded shadow-lg transition-all transform hover:-translate-y-0.5">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-gray-400 py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+                <span class="text-white font-serif font-bold text-xl block mb-2">AS</span>
+                <p class="text-sm">Abhishek Sahoo &copy; 2024. All rights reserved.</p>
+            </div>
+            <div class="flex gap-6">
+                <a href="#about" class="text-sm hover:text-white transition-colors">About</a>
+                <a href="#projects" class="text-sm hover:text-white transition-colors">Projects</a>
+                <a href="#contact" class="text-sm hover:text-white transition-colors">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Resume Modal (Hidden by default) -->
+    <div id="resume-modal" class="fixed inset-0 z-[100] hidden overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 bg-gray-900 bg-opacity-75 transition-opacity" aria-hidden="true" onclick="document.getElementById('resume-modal').classList.add('hidden')"></div>
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+                <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <div class="sm:flex sm:items-start">
+                        <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-blue-100 sm:mx-0 sm:h-10 sm:w-10">
+                            <i class="fas fa-file-pdf text-accent"></i>
+                        </div>
+                        <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                            <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">Download Resume</h3>
+                            <div class="mt-2">
+                                <p class="text-sm text-gray-500">
+                                    The resume file is not currently linked. In a real deployment, this button would trigger the download of <strong>Abhishek_Sahoo_Resume.pdf</strong>.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                    <button type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-accent text-base font-medium text-white hover:bg-accentHover focus:outline-none sm:ml-3 sm:w-auto" onclick="document.getElementById('resume-modal').classList.add('hidden')">
+                        Got it
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Intersection Observer for Fade-in Animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Only animate once
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section-fade').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                nav.classList.add('shadow-md');
+                nav.classList.replace('bg-primary/90', 'bg-primary/95');
+                nav.classList.add('backdrop-blur-md');
+            } else {
+                nav.classList.remove('shadow-md');
+                nav.classList.replace('bg-primary/95', 'bg-primary/90');
+            }
+        });
+    </script>
+</body>
+</html>
