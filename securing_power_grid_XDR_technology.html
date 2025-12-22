@@ -67,94 +67,94 @@
                     Securing the Power Grid: The Shift from Traditional IT to XDR
                 </h1>
                 <div class="flex items-center justify-center gap-4 text-textMuted text-sm">
-                    <span><i class="far fa-calendar mr-2"></i> December 22, 2025</span>
+                    <span><i class="far fa-calendar mr-2"></i> Nov 22, 2024</span>
                     <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
-                    <span>10 min read</span>
+                    <span>6 min read</span>
                 </div>
             </header>
 
             <!-- Featured Image Placeholder -->
             <div class="rounded-xl overflow-hidden shadow-lg mb-12 h-[300px] md:h-[400px] relative bg-gray-800">
-                 <!-- *** CHANGED CODE HERE *** -->
-                 <!-- INSTRUCTION: 
-                      1. Save your own image as 'XDR_Powergrid.jpg'.
-                      2. Upload it to your GitHub repository in the main folder.
-                      3. The code below uses 'XDR_Powergrid.jpg' as the source.
-                      4. The 'onerror' part is a backup: if your file isn't found, it loads the internet image. 
+                 <!-- 
+                      INSTRUCTION for Custom Image: 
+                      1. Save your image as 'XDR_Powergrid.jpg'
+                      2. Upload it to your GitHub repository.
                  -->
                  <img src="XDR_Powergrid.jpg" 
-                      onerror="this.src='https://images.unsplash.com/photo-1579547621869-0ddb29f3b2bf?q=80&w=1200&auto=format&fit=crop'"
+                      onerror="this.src='https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=1200&auto=format&fit=crop'"
                       class="w-full h-full object-cover opacity-80" 
-                      alt="Open Cast Coal Mining Excavation">
-                 <!-- *** END OF CHANGED CODE *** -->
+                      alt="Power Grid Transmission Lines">
             </div>
 
             <!-- Content Body -->
-            <!-- Added 'text-justify' to distribute text evenly -->
             <div class="prose prose-lg prose-slate max-w-none text-gray-700 leading-relaxed space-y-6 text-justify">
                 
-                <!-- PASTE YOUR BLOG CONTENT HERE -->
                 <p class="font-medium text-xl text-primary">
-                 <p>   
-                    The modern power grid is no longer just wires and steel towers; it has gone digital. Today, utility companies use "smart" technology to integrate renewable energy and manage electricity flow more efficiently. However, connecting power grids to the internet has a downside: it opens the door to cyberattacks. We are seeing a global rise in hackers targeting the critical systems that keep our lights on. The frightening reality is that the standard security tools used to protect office computers are not equipped to protect power plants. To keep the grid safe, the industry is moving toward a more advanced defence method known as XDR.
-                 
+                    The modern power grid is no longer just wires and steel towers; it has gone digital. Today, utility companies use "smart" technology to integrate renewable energy and manage electricity flow more efficiently. However, connecting power grids to the internet has a downside: it opens the door to cyberattacks.
                 </p>
 
-                <h2 class="text-2xl font-bold text-primary mt-8 mb-4">1. Why Standard Office Security Fails in Power Plants? "</h2>
+                <p>
+                    We are seeing a global rise in hackers targeting the critical systems that keep our lights on. The frightening reality is that the standard security tools used to protect office computers are not equipped to protect power plants. To keep the grid safe, the industry is moving toward a more advanced defence method known as XDR (Extended Detection and Response).
+                </p>
+
+                <h2 class="text-2xl font-bold text-primary mt-8 mb-4">1. Why Standard Office Security Fails in Power Plants</h2>
                 <p>
                     To understand the problem, we have to look at the difference between an office environment (IT) and a power plant environment (OT, or Operational Technology). In an office, the main goal is protecting data. If a laptop gets a virus, IT can shut it down and update it.
-                
                 </p>
                 <p>
-                    In a power plant, the main goal is safety and keeping the power on. You cannot simply "restart" a system controlling a high-voltage line without risking a blackout or damaging equipment.    
+                    In a power plant, the main goal is safety and keeping the power on. You cannot simply "restart" a system controlling a high-voltage line without risking a blackout or damaging equipment.
                 </p>
-                <p>
-                    •	Updates are risky: Office computers get updates weekly. Power plant machinery runs 24/7 and often cannot be stopped for updates.
-                </p>
-                <p>    
-                    •	Different languages: Industrial machines speak specialized computer languages that standard antivirus software doesn't understand.
-                </p>
-                <p>
-                    •	Fragile systems: Active scanning (a common IT security tactic) can actually overwhelm older industrial equipment and cause it to crash.
-                </p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>
+                        <strong>Updates are risky:</strong> Office computers get updates weekly. Power plant machinery runs 24/7 and often cannot be stopped for updates.
+                    </li>
+                    <li>
+                        <strong>Different languages:</strong> Industrial machines speak specialized computer languages that standard antivirus software doesn't understand.
+                    </li>
+                    <li>
+                        <strong>Fragile systems:</strong> Active scanning (a common IT security tactic) can actually overwhelm older industrial equipment and cause it to crash.
+                    </li>
+                </ul>
 
-                <h2 class="text-2xl font-bold text-primary mt-8 mb-4">2. Unique Challenges in Securing the Grid </h2>
+                <h2 class="text-2xl font-bold text-primary mt-8 mb-4">2. Unique Challenges in Securing the Grid</h2>
                 <p>
                     Power grids face specific hurdles that banks or tech companies don’t. First, much of the equipment is old—sometimes running on outdated systems like Windows XP—because these heavy machines are built to last 20 years, not 3. Second, power substations are scattered across vast distances, often in remote areas without staff on-site.
+                </p>
                 <p>
-                    Modern IoT sensor networks provide a "digital nervous system" for the mine. Ground-based radar (SSR) integrated with pore pressure sensors can detect millimeter-level ground movement, triggering automated alerts for slope failure days in advance. Simultaneously, environmental sensors networked via LoRaWAN can monitor spontaneous combustion risks in coal stockpiles and detect hazardous gas concentrations, instantly alerting the control room.    
+                    The stakes are incredibly high. In 2015, a cyberattack on Ukraine’s power grid successfully cut electricity to over 200,000 people. The attackers exploited the lack of visibility in the system, proving that when digital security fails in this sector, the consequences are physical.
                 </p>
 
-                <h2 class="text-2xl font-bold text-primary mt-8 mb-4">3. The Autonomous Horizon: Haulage and Drones</h2>
+                <h2 class="text-2xl font-bold text-primary mt-8 mb-4">3. XDR: A Modern Security Solution</h2>
                 <p>
-                    While full autonomy is standard in Australian iron ore mines, India is entering a crucial pilot phase. The immediate value for Indian professionals lies in Assisted Autonomy.
-                <p>
-                    IoT-enabled Collision Avoidance Systems (CAS) are becoming standard, communicating vehicle-to-vehicle (V2V) to prevent accidents in dusty blind spots. Meanwhile, autonomous drones equipped with LiDAR are revolutionizing volumetric surveying. They can map vast open cast pits in minutes rather than days, feeding precise data into mine planning software without putting surveyors at risk near highwall edges.    
+                    This is where XDR (Extended Detection and Response) comes in. Think of traditional security tools like having separate security guards for the front door, the back door, and the parking lot, but none of them have radios to talk to each other. XDR connects them all.
                 </p>
-                
-                <h2 class="text-2xl font-bold text-primary mt-8 mb-4">4. Sustainability: The Water-Energy Nexus</h2>
                 <p>
-                    With strict environmental clearances (EC) and ESG mandates, sustainability is an operational imperative. IoT drives efficiency here by granularly tracking resource usage. Smart flow meters on dewatering pumps ensure they run only when necessary, optimizing energy consumption. Furthermore, fuel management systems on haul trucks analyze driver behavior—idling times, acceleration patterns—to reduce diesel burn, directly lowering the carbon footprint per tonne of coal produced.
-
+                    XDR collects data from everywhere—emails, office networks, and the industrial control systems—and analyzes it together.
+                </p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>
+                        <strong>Unified View:</strong> It allows security teams to see an attack starting in a corporate email and moving toward the power plant controls.
+                    </li>
+                    <li>
+                        <strong>Smart Detection:</strong> It uses AI to learn what "normal" looks like. If a machine that usually runs quietly suddenly starts sending strange commands at 3 AM, XDR spots the anomaly.
+                    </li>
+                    <li>
+                        <strong>Safe Response:</strong> Crucially for power plants, XDR can use "passive" monitoring. It listens to the network traffic to find threats without interfering with the delicate machinery.
+                    </li>
+                </ul>
+                <p>
+                    For example, a utility operator recently used XDR to spot a malfunctioning controller that was flooding the network with errors. They fixed it before it caused a shutdown—something standard tools would have missed.
                 </p>
 
-                <h2 class="text-2xl font-bold text-primary mt-8 mb-4">5. The Connectivity Challenge: 5G and Security</h2>
+                <h2 class="text-2xl font-bold text-primary mt-8 mb-4">4. Building a Resilient Strategy</h2>
                 <p>
-                    The biggest hurdle for IoT in coal mining in India has been connectivity. Dusty, remote, and expansive terrain kills standard Wi-Fi. The emergence of private 5G networks is the game-changer, offering the low latency (<10ms) and high bandwidth required for autonomous systems and real-time video analytics.
-                <p>
-                    However, converging IT with Operational Technology (OT) opens the door to cyber threats. Securing the "edge"—the sensors and devices in the pit—is as critical as securing the corporate server.    
-
+                    Technology is only half the battle. A truly secure grid requires teamwork between the IT experts (who know software) and the engineers (who know the machinery). They must work together to ensure that security measures never interfere with power generation. By combining XDR with proper staff training and clear emergency plans, utilities can build a defense that is tough enough for the modern world.
                 </p>
 
-                <h2 class="text-2xl font-bold text-primary mt-8 mb-4">Conclusion: The Road to 2030</h2>
+                <h2 class="text-2xl font-bold text-primary mt-8 mb-4">Conclusion</h2>
                 <p>
-                    As we close 2025, the global smart mining market is on track to surpass $30 billion by 2030. For Indian mining professionals, the next five years will be defined by the adoption of Edge Computing—processing data on the truck or sensor itself for instant decision-making. The future is not just about digging deeper; it is about digging smarter.
+                    As our power grids become smarter, our security must become smarter too. We can no longer rely on outdated tools to protect critical infrastructure. By adopting integrated systems like XDR, energy providers can ensure that the lights stay on, keeping our homes powered and our communities safe for the future.
                 </p>
-                <!-- Added 'italic' class here -->
-                <p class="italic">
-                    Are you ready to pilot your first IoT-driven predictive maintenance module? Let's discuss how to start small and scale fast.
-                </p>   
-                <!-- END OF YOUR CONTENT -->
 
             </div>
 
@@ -162,9 +162,24 @@
             <div class="mt-16 pt-8 border-t border-gray-200">
                 <h3 class="font-bold text-primary mb-4">Share this article</h3>
                 <div class="flex gap-4">
-                    <a href="#" class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all"><i class="fas fa-envelope"></i></a>
+                    <!-- 
+                         REMINDER: Replace 'INSERT_YOUR_LIVE_LINK_HERE' with your actual URL once published.
+                         Example: https://techbyabhishek.github.io/securing_power_grid_XDR_technology.html
+                    -->
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://techbyabhishek.github.io/portfolio/securing_power_grid_XDR_technology" 
+                       target="_blank"
+                       class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all">
+                       <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://twitter.com/intent/tweet?text=Securing%20the%20Power%20Grid%20with%20XDR&url=https://techbyabhishek.github.io/portfolio/securing_power_grid_XDR_technology" 
+                       target="_blank"
+                       class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all">
+                       <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="mailto:?subject=Read:%20Securing%20the%20Power%20Grid&body=Check%20this%20out:%20https://techbyabhishek.github.io/portfolio/securing_power_grid_XDR_technology" 
+                       class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all">
+                       <i class="fas fa-envelope"></i>
+                    </a>
                 </div>
             </div>
         </article>
@@ -178,9 +193,4 @@
     </footer>
 
 </body>
-
 </html>
-
-
-
-
