@@ -864,10 +864,47 @@
                 nav.classList.replace('bg-primary/95', 'bg-primary/90');
             }
         });
+        // *** NEW SCRIPTS: Date & Counter Logic ***
+        
+        // 1. Live Date Function
+        function updateFooterDate() {
+            const dateElement = document.getElementById('live-date');
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const today = new Date();
+            dateElement.textContent = today.toLocaleDateString('en-US', options);
+        }
+
+        // 2. Visit Counter Simulation (Uses LocalStorage)
+        function updateVisitCounter() {
+            const counterElement = document.getElementById('visit-counter');
+            // Check if a count exists in local storage
+            let count = localStorage.getItem('portfolio_visit_count');
+            
+            // If no count, start at a realistic base number (e.g., 1024)
+            if (!count) {
+                count = 1024;
+            } else {
+                // Increment count
+                count = parseInt(count) + 1;
+            }
+            
+            // Save new count
+            localStorage.setItem('portfolio_visit_count', count);
+            
+            // Display with leading zeros (e.g., 001025)
+            counterElement.textContent = count.toString().padStart(6, '0');
+        }
+
+        // Initialize Footer Stats
+        document.addEventListener('DOMContentLoaded', () => {
+            updateFooterDate();
+            updateVisitCounter();
+        });
     </script>
 </body>
 
 </html>
+
 
 
 
