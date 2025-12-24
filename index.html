@@ -864,50 +864,12 @@
                 nav.classList.replace('bg-primary/95', 'bg-primary/90');
             }
         });
-        // *** NEW SCRIPTS: Date & Counter Logic (Robust Version) ***
-        
-        // 1. Live Date Function
-        function updateFooterDate() {
-            const dateElement = document.getElementById('live-date');
-            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-            const today = new Date();
-            dateElement.textContent = today.toLocaleDateString('en-US', options);
-        }
-
-        // 2. Simulated Visit Counter (Pure JS - No API needed)
-        // This guarantees the counter always shows a number.
-        function updateVisitCounter() {
-            const counterElement = document.getElementById('visit-counter');
-            
-            // Generate a realistic base number based on date to simulate traffic growth
-            // (Days since Jan 1 2025) * 15 visits/day
-            const start = new Date("2025-01-01");
-            const now = new Date();
-            const daysDiff = Math.floor((now - start) / (1000 * 60 * 60 * 24));
-            let baseCount = 1000 + (daysDiff * 15); 
-
-            // Add local session increment
-            let localCount = localStorage.getItem('local_session_hits');
-            if(!localCount) localCount = 0;
-            localCount = parseInt(localCount) + 1;
-            localStorage.setItem('local_session_hits', localCount);
-
-            let totalDisplay = baseCount + localCount;
-            
-            // Format with leading zeros
-            counterElement.textContent = totalDisplay.toString().padStart(6, '0');
-        }
-
-        // Initialize Footer Stats
-        document.addEventListener('DOMContentLoaded', () => {
-            updateFooterDate();
-            updateVisitCounter();
-        });
 
     </script>
 </body>
 
 </html>
+
 
 
 
